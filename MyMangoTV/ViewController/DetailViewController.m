@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 
+#import "MySegmentedControl.h"
+
 @interface DetailViewController ()
 {
     UITableView *_tableView;
@@ -25,9 +27,24 @@
     return self;
 }
 
+- (UIView *)tableViewHeader
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+    
+    MySegmentedControl *segmented = [[MySegmentedControl alloc] initWithFrame:CGRectMake(0, 100 - 40, self.view.frame.size.width, 40)];
+    segmented.items = @[@"整片", @"短片", @"中片", @"超长片"];
+    segmented.selectedIndex = 3;
+    segmented.didSelectedAtIndex = ^(MySegmentedControl *sender, NSInteger index){
+        NSLog(@"%d", index);
+    };
+    [headerView addSubview:segmented];
+    return headerView;
+}
+
 - (void)createTableView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60) style:UITableViewStylePlain];
+    _tableView.tableHeaderView = [self tableViewHeader];
     [self.view addSubview:_tableView];
 }
 

@@ -53,6 +53,9 @@
 		18CD089919A5C5650058F3F7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD089819A5C5650058F3F7 /* DetailViewController.m */; };
 		18CD089C19A5C8420058F3F7 /* ColumnDetailIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CD089A19A5C8420058F3F7 /* ColumnDetailIcon@2x.png */; };
 		18CD089D19A5C8420058F3F7 /* NavigationBarBackBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CD089B19A5C8420058F3F7 /* NavigationBarBackBackground@2x.png */; };
+		18CD08A019A5DF950058F3F7 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD089F19A5DF950058F3F7 /* MySegmentedControl.m */; };
+		18CD08A319A5E5420058F3F7 /* SegmentBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CD08A119A5E5420058F3F7 /* SegmentBackground@2x.png */; };
+		18CD08A419A5E5420058F3F7 /* SegmentBackgroundSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CD08A219A5E5420058F3F7 /* SegmentBackgroundSelected@2x.png */; };
 		18D9E80E19A324AE00AB843F /* RecommandationViewTitleBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D9E80D19A324AE00AB843F /* RecommandationViewTitleBackground@2x.png */; };
 		18D9E81019A3260A00AB843F /* NavigationBarLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D9E80F19A3260A00AB843F /* NavigationBarLogo@2x.png */; };
 		18D9E81219A3277900AB843F /* PlayRecordsIcoGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D9E81119A3277900AB843F /* PlayRecordsIcoGray@2x.png */; };
@@ -150,6 +153,10 @@
 		18CD089819A5C5650058F3F7 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		18CD089A19A5C8420058F3F7 /* ColumnDetailIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColumnDetailIcon@2x.png"; sourceTree = "<group>"; };
 		18CD089B19A5C8420058F3F7 /* NavigationBarBackBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavigationBarBackBackground@2x.png"; sourceTree = "<group>"; };
+		18CD089E19A5DF950058F3F7 /* MySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentedControl.h; sourceTree = "<group>"; };
+		18CD089F19A5DF950058F3F7 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
+		18CD08A119A5E5420058F3F7 /* SegmentBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SegmentBackground@2x.png"; sourceTree = "<group>"; };
+		18CD08A219A5E5420058F3F7 /* SegmentBackgroundSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SegmentBackgroundSelected@2x.png"; sourceTree = "<group>"; };
 		18D9E80D19A324AE00AB843F /* RecommandationViewTitleBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecommandationViewTitleBackground@2x.png"; sourceTree = "<group>"; };
 		18D9E80F19A3260A00AB843F /* NavigationBarLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavigationBarLogo@2x.png"; sourceTree = "<group>"; };
 		18D9E81119A3277900AB843F /* PlayRecordsIcoGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PlayRecordsIcoGray@2x.png"; sourceTree = "<group>"; };
@@ -250,6 +257,8 @@
 				189D4EA519A499C5004EA0B7 /* CommonTableViewCell.m */,
 				18831C4919A59FA8003FDDB0 /* HotView.h */,
 				18831C4A19A59FA8003FDDB0 /* HotView.m */,
+				18CD089E19A5DF950058F3F7 /* MySegmentedControl.h */,
+				18CD089F19A5DF950058F3F7 /* MySegmentedControl.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +285,8 @@
 		185E779319A2F44F00EE8AA8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18CD08A119A5E5420058F3F7 /* SegmentBackground@2x.png */,
+				18CD08A219A5E5420058F3F7 /* SegmentBackgroundSelected@2x.png */,
 				18831C4C19A5A0BF003FDDB0 /* color-wheel-icon.jpg */,
 				18CD089A19A5C8420058F3F7 /* ColumnDetailIcon@2x.png */,
 				18CD089B19A5C8420058F3F7 /* NavigationBarBackBackground@2x.png */,
@@ -425,9 +436,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CD08A319A5E5420058F3F7 /* SegmentBackground@2x.png in Resources */,
 				185E77A119A2F44F00EE8AA8 /* TabBarHomeChannelsIcon@2x.png in Resources */,
 				18D9E81019A3260A00AB843F /* NavigationBarLogo@2x.png in Resources */,
 				185E77A519A2F44F00EE8AA8 /* TabBarHomeSpliter@2x.png in Resources */,
+				18CD08A419A5E5420058F3F7 /* SegmentBackgroundSelected@2x.png in Resources */,
 				18831C4D19A5A0BF003FDDB0 /* color-wheel-icon.jpg in Resources */,
 				18BC8CB619A493610096B203 /* HomeActivityBarIcon@2x.png in Resources */,
 				185E77A719A2F44F00EE8AA8 /* TabBarRecommendSelectedIcon@2x.png in Resources */,
@@ -465,6 +478,7 @@
 				18BC8C1019A42A1B0096B203 /* MKAnnotationView+WebCache.m in Sources */,
 				185E778E19A2F37800EE8AA8 /* ChannelViewController.m in Sources */,
 				18BC8C1819A42A1B0096B203 /* SDWebImagePrefetcher.m in Sources */,
+				18CD08A019A5DF950058F3F7 /* MySegmentedControl.m in Sources */,
 				18BC8C1719A42A1B0096B203 /* SDWebImageManager.m in Sources */,
 				18CD089919A5C5650058F3F7 /* DetailViewController.m in Sources */,
 				185E779119A2F37800EE8AA8 /* MyViewController.m in Sources */,
