@@ -43,7 +43,9 @@
         NSNumber *w = _cellWdiths[i];
         x -= [w floatValue];
         if (x < 0) {
-            _didSelectedView(self, i);
+            if (_didSelectedView) {
+                _didSelectedView(self, i);
+            }
             break;
         }
     }

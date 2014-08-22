@@ -8,8 +8,14 @@
 
 #import "ChannelViewController.h"
 
-@interface ChannelViewController ()
+#import "CommonTableViewCell.h"
+#import "CategoryView.h"
 
+@interface ChannelViewController () <UITableViewDataSource, UITableViewDelegate>
+{
+    UITableView *_tableView;
+    NSArray *_categoryArray;
+}
 @end
 
 @implementation ChannelViewController
@@ -23,11 +29,24 @@
     return self;
 }
 
+- (void)createTableView
+{
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    
+    [_tableView registerClass:[CommonTableViewCell class] forCellReuseIdentifier:@"cell"];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor cyanColor];
+    _categoryArray = @[@"综艺", @"新闻", @"电视剧", @"电影", @"音乐", @"动画片", @"出品方", @"爱芒果", @"VIP专区", @"花儿与少年"];
+    
+    [self createTableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,15 +55,52 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (_categoryArray.count % 3) {
+        return _categoryArray.count / 3 + 1;
+    }
+    
+    return _categoryArray.count / 3;
 }
-*/
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"cell";
+    
+    //先取可重用的cell，如果没有则自动创建
+    CommonTableViewCell *cell = (CommonTableViewCell *)[tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+
+    //获取tableView的行数
+    int rowCount = [self tableView:nil numberOfRowsInSection:0];
+    int count = (rowCount == (indexPath.row + 1))?(_categoryArray.count%3):3;
+
+    //每个Cell里View的数目
+    cell.numberOfViewInCell = ^(CommonTableViewCell *sender){
+        return count;
+    };
+    //设置每个视图的宽度
+    cell.widthForCell = ^CGFloat(CommonTableViewCell *sender, NSInteger index){
+        return 100;
+    };
+    //返回每个视图的对象
+    cell.viewForCell = ^(CommonTableViewCell *sender, NSInteger index) {
+        CategoryView *v = [[CategoryView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        v.imageView.image = [UIImage imageNamed:@"CartoonIcon.png"];
+
+        v.label.text = _categoryArray[indexPath.row * 3 + index];
+        
+        return v;
+    };
+    //选取一个类别
+    cell.didSelectedView = ^(CommonTableViewCell *cell, NSInteger index){
+        NSLog(@"%@", _categoryArray[indexPath.row * 3 + index]);
+    };
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 @end

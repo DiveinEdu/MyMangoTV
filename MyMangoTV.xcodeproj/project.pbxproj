@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180D390719A6E38400E83BF2 /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180D390619A6E38400E83BF2 /* CategoryView.m */; };
+		180D391519A6E47900E83BF2 /* CartoonIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390819A6E47900E83BF2 /* CartoonIcon@2x.png */; };
+		180D391619A6E47900E83BF2 /* HuaerYuShaonianIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390919A6E47900E83BF2 /* HuaerYuShaonianIcon.png */; };
+		180D391719A6E47900E83BF2 /* ImgoShareIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390A19A6E47900E83BF2 /* ImgoShareIcon@2x.png */; };
+		180D391819A6E47900E83BF2 /* MoviesIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390B19A6E47900E83BF2 /* MoviesIcon@2x.png */; };
+		180D391919A6E47900E83BF2 /* MusicsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390C19A6E47900E83BF2 /* MusicsIcon@2x.png */; };
+		180D391A19A6E47900E83BF2 /* NewsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390D19A6E47900E83BF2 /* NewsIcon@2x.png */; };
+		180D391B19A6E47900E83BF2 /* PartTabBarMVIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390E19A6E47900E83BF2 /* PartTabBarMVIcon@2x.png */; };
+		180D391C19A6E47900E83BF2 /* PartTabBarVideoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D390F19A6E47900E83BF2 /* PartTabBarVideoIcon@2x.png */; };
+		180D391D19A6E47900E83BF2 /* TravelIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391019A6E47900E83BF2 /* TravelIcon@2x.png */; };
+		180D391E19A6E47900E83BF2 /* TVIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391119A6E47900E83BF2 /* TVIcon@2x.png */; };
+		180D391F19A6E47900E83BF2 /* TVProgramIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391219A6E47900E83BF2 /* TVProgramIcon@2x.png */; };
+		180D392019A6E47900E83BF2 /* VipCornerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391319A6E47900E83BF2 /* VipCornerIcon@2x.png */; };
+		180D392119A6E47900E83BF2 /* VipIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391419A6E47900E83BF2 /* VipIcon@2x.png */; };
 		185E774C19A2F14E00EE8AA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E774B19A2F14E00EE8AA8 /* main.m */; };
 		185E774F19A2F14E00EE8AA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E774E19A2F14E00EE8AA8 /* AppDelegate.m */; };
 		185E775119A2F14E00EE8AA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185E775019A2F14E00EE8AA8 /* Images.xcassets */; };
@@ -73,6 +87,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180D390519A6E38400E83BF2 /* CategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
+		180D390619A6E38400E83BF2 /* CategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
+		180D390819A6E47900E83BF2 /* CartoonIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CartoonIcon@2x.png"; sourceTree = "<group>"; };
+		180D390919A6E47900E83BF2 /* HuaerYuShaonianIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HuaerYuShaonianIcon.png; sourceTree = "<group>"; };
+		180D390A19A6E47900E83BF2 /* ImgoShareIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ImgoShareIcon@2x.png"; sourceTree = "<group>"; };
+		180D390B19A6E47900E83BF2 /* MoviesIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MoviesIcon@2x.png"; sourceTree = "<group>"; };
+		180D390C19A6E47900E83BF2 /* MusicsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicsIcon@2x.png"; sourceTree = "<group>"; };
+		180D390D19A6E47900E83BF2 /* NewsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewsIcon@2x.png"; sourceTree = "<group>"; };
+		180D390E19A6E47900E83BF2 /* PartTabBarMVIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PartTabBarMVIcon@2x.png"; sourceTree = "<group>"; };
+		180D390F19A6E47900E83BF2 /* PartTabBarVideoIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PartTabBarVideoIcon@2x.png"; sourceTree = "<group>"; };
+		180D391019A6E47900E83BF2 /* TravelIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TravelIcon@2x.png"; sourceTree = "<group>"; };
+		180D391119A6E47900E83BF2 /* TVIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TVIcon@2x.png"; sourceTree = "<group>"; };
+		180D391219A6E47900E83BF2 /* TVProgramIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TVProgramIcon@2x.png"; sourceTree = "<group>"; };
+		180D391319A6E47900E83BF2 /* VipCornerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VipCornerIcon@2x.png"; sourceTree = "<group>"; };
+		180D391419A6E47900E83BF2 /* VipIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VipIcon@2x.png"; sourceTree = "<group>"; };
 		185E774619A2F14E00EE8AA8 /* MyMangoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMangoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185E774A19A2F14E00EE8AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185E774B19A2F14E00EE8AA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -257,6 +286,8 @@
 				189D4EA519A499C5004EA0B7 /* CommonTableViewCell.m */,
 				18831C4919A59FA8003FDDB0 /* HotView.h */,
 				18831C4A19A59FA8003FDDB0 /* HotView.m */,
+				180D390519A6E38400E83BF2 /* CategoryView.h */,
+				180D390619A6E38400E83BF2 /* CategoryView.m */,
 				18CD089E19A5DF950058F3F7 /* MySegmentedControl.h */,
 				18CD089F19A5DF950058F3F7 /* MySegmentedControl.m */,
 			);
@@ -285,6 +316,19 @@
 		185E779319A2F44F00EE8AA8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				180D390819A6E47900E83BF2 /* CartoonIcon@2x.png */,
+				180D390919A6E47900E83BF2 /* HuaerYuShaonianIcon.png */,
+				180D390A19A6E47900E83BF2 /* ImgoShareIcon@2x.png */,
+				180D390B19A6E47900E83BF2 /* MoviesIcon@2x.png */,
+				180D390C19A6E47900E83BF2 /* MusicsIcon@2x.png */,
+				180D390D19A6E47900E83BF2 /* NewsIcon@2x.png */,
+				180D390E19A6E47900E83BF2 /* PartTabBarMVIcon@2x.png */,
+				180D390F19A6E47900E83BF2 /* PartTabBarVideoIcon@2x.png */,
+				180D391019A6E47900E83BF2 /* TravelIcon@2x.png */,
+				180D391119A6E47900E83BF2 /* TVIcon@2x.png */,
+				180D391219A6E47900E83BF2 /* TVProgramIcon@2x.png */,
+				180D391319A6E47900E83BF2 /* VipCornerIcon@2x.png */,
+				180D391419A6E47900E83BF2 /* VipIcon@2x.png */,
 				18CD08A119A5E5420058F3F7 /* SegmentBackground@2x.png */,
 				18CD08A219A5E5420058F3F7 /* SegmentBackgroundSelected@2x.png */,
 				18831C4C19A5A0BF003FDDB0 /* color-wheel-icon.jpg */,
@@ -438,10 +482,16 @@
 			files = (
 				18CD08A319A5E5420058F3F7 /* SegmentBackground@2x.png in Resources */,
 				185E77A119A2F44F00EE8AA8 /* TabBarHomeChannelsIcon@2x.png in Resources */,
+				180D391819A6E47900E83BF2 /* MoviesIcon@2x.png in Resources */,
 				18D9E81019A3260A00AB843F /* NavigationBarLogo@2x.png in Resources */,
 				185E77A519A2F44F00EE8AA8 /* TabBarHomeSpliter@2x.png in Resources */,
+				180D391A19A6E47900E83BF2 /* NewsIcon@2x.png in Resources */,
 				18CD08A419A5E5420058F3F7 /* SegmentBackgroundSelected@2x.png in Resources */,
+				180D392119A6E47900E83BF2 /* VipIcon@2x.png in Resources */,
+				180D391B19A6E47900E83BF2 /* PartTabBarMVIcon@2x.png in Resources */,
+				180D391E19A6E47900E83BF2 /* TVIcon@2x.png in Resources */,
 				18831C4D19A5A0BF003FDDB0 /* color-wheel-icon.jpg in Resources */,
+				180D392019A6E47900E83BF2 /* VipCornerIcon@2x.png in Resources */,
 				18BC8CB619A493610096B203 /* HomeActivityBarIcon@2x.png in Resources */,
 				185E77A719A2F44F00EE8AA8 /* TabBarRecommendSelectedIcon@2x.png in Resources */,
 				18D9E81219A3277900AB843F /* PlayRecordsIcoGray@2x.png in Resources */,
@@ -450,11 +500,18 @@
 				18CD089D19A5C8420058F3F7 /* NavigationBarBackBackground@2x.png in Resources */,
 				185E77A219A2F44F00EE8AA8 /* TabBarHomeLiveIcon@2x.png in Resources */,
 				18BC8CB819A4984F0096B203 /* HomeMore@2x.png in Resources */,
+				180D391919A6E47900E83BF2 /* MusicsIcon@2x.png in Resources */,
 				185E77A619A2F44F00EE8AA8 /* TabBarRecommendIcon@2x.png in Resources */,
 				185E779F19A2F44F00EE8AA8 /* TabBarHomeBackground@2x.png in Resources */,
+				180D391619A6E47900E83BF2 /* HuaerYuShaonianIcon.png in Resources */,
+				180D391719A6E47900E83BF2 /* ImgoShareIcon@2x.png in Resources */,
+				180D391519A6E47900E83BF2 /* CartoonIcon@2x.png in Resources */,
+				180D391C19A6E47900E83BF2 /* PartTabBarVideoIcon@2x.png in Resources */,
 				18D9E80E19A324AE00AB843F /* RecommandationViewTitleBackground@2x.png in Resources */,
 				185E77A419A2F44F00EE8AA8 /* TabBarHomeSearchIcon@2x.png in Resources */,
 				185E77A019A2F44F00EE8AA8 /* TabBarHomeBackgroundSelected@2x.png in Resources */,
+				180D391F19A6E47900E83BF2 /* TVProgramIcon@2x.png in Resources */,
+				180D391D19A6E47900E83BF2 /* TravelIcon@2x.png in Resources */,
 				185E775119A2F14E00EE8AA8 /* Images.xcassets in Resources */,
 				185E77A319A2F44F00EE8AA8 /* TabBarHomeMoreIcon@2x.png in Resources */,
 			);
@@ -476,6 +533,7 @@
 			files = (
 				185E774F19A2F14E00EE8AA8 /* AppDelegate.m in Sources */,
 				18BC8C1019A42A1B0096B203 /* MKAnnotationView+WebCache.m in Sources */,
+				180D390719A6E38400E83BF2 /* CategoryView.m in Sources */,
 				185E778E19A2F37800EE8AA8 /* ChannelViewController.m in Sources */,
 				18BC8C1819A42A1B0096B203 /* SDWebImagePrefetcher.m in Sources */,
 				18CD08A019A5DF950058F3F7 /* MySegmentedControl.m in Sources */,

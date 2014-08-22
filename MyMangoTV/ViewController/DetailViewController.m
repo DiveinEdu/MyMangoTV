@@ -10,9 +10,14 @@
 
 #import "MySegmentedControl.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *_tableView;
+    
+    NSArray *_longArray;
+    NSArray *_shortArray;
+    
+    MySegmentedControl *segmented;
 }
 @end
 
@@ -31,11 +36,14 @@
 {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
     
-    MySegmentedControl *segmented = [[MySegmentedControl alloc] initWithFrame:CGRectMake(0, 100 - 40, self.view.frame.size.width, 40)];
-    segmented.items = @[@"整片", @"短片", @"中片", @"超长片"];
-    segmented.selectedIndex = 3;
+    segmented = [[MySegmentedControl alloc] initWithFrame:CGRectMake(0, 100 - 40, self.view.frame.size.width, 40)];
+    segmented.items = @[@"整片", @"短片"];
+    segmented.selectedIndex = 0;
+    
+    __weak typeof(_tableView) WeakTableView = _tableView;
+    //Capture，捕获
     segmented.didSelectedAtIndex = ^(MySegmentedControl *sender, NSInteger index){
-        NSLog(@"%d", index);
+        [WeakTableView reloadData];
     };
     [headerView addSubview:segmented];
     return headerView;
@@ -45,12 +53,17 @@
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60) style:UITableViewStylePlain];
     _tableView.tableHeaderView = [self tableViewHeader];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
     [self.view addSubview:_tableView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _longArray = @[@"爸爸去哪",@"古剑男神", @"仙剑女神", @"李易峰"];
+    _shortArray = @[@"周大福", @"周大生", @"周生生"];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn addTarget:self action:@selector(didBack:) forControlEvents:UIControlEventTouchUpInside];
@@ -90,4 +103,35 @@
     
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (segmented.selectedIndex == 0)
+    {
+        return _longArray.count;
+    }
+    else
+    {
+        return _shortArray.count;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"cell";
+    //检查是否有可以重用cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        //创建cell
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    if (segmented.selectedIndex == 0) {
+        cell.textLabel.text = _longArray[indexPath.row];
+    }
+    else {
+        cell.textLabel.text = _shortArray[indexPath.row];
+    }
+    
+    return cell;
+}
 @end

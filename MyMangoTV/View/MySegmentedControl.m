@@ -70,6 +70,7 @@
     }
     
     sender.selected = YES;
+    _selectedIndex = sender.tag;
     
     if (_didSelectedAtIndex) {
         _didSelectedAtIndex(self, sender.tag);
