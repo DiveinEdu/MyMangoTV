@@ -17,6 +17,12 @@
 #import "HotView.h"
 
 #import "PublicHeader.h"
+#import "Configuration.h"
+
+#import "DVIDataManager.h"
+#import "FlashItem.h"
+#import "TypeCommendItem.h"
+#import "VideoItem.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, MyScrollViewDelegate, MyScrollViewDataSource>
 {
@@ -26,6 +32,8 @@
     UIPageControl *pageControl;
     
     MyTipsView *tipsView;
+    
+    NSArray *bannerArray;
 }
 @end
 
@@ -50,6 +58,7 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, height)];
     headerView.backgroundColor = [UIColor redColor];
     
+    //创建头部滚动视图
     bannerView = [[MyScrollView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, height - tipHeight)];
     bannerView.dataSource = self;
     bannerView.delegate = self;
@@ -98,6 +107,19 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     [self createTableView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRefresh:) name:kRefreshData object:nil];
+    
+    //获取首页的数据
+    [[DVIDataManager sharedManager] flashData];
+}
+
+//刷新首页上面的滚动视图
+- (void)didRefresh:(NSNotification *)notification
+{
+    bannerArray = [[DVIDataManager sharedManager] flashData];
+    
+    [bannerView reloadData];
 }
 
 - (void)didClickHistory:(id)sender
@@ -210,7 +232,8 @@
 #pragma mark - MyScrollViewDataSource
 - (NSInteger)numberOfPageInScrollView:(MyScrollView *)scrollView
 {
-    return 10;
+    //
+    return bannerArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -220,14 +243,16 @@
 
 - (UIView *)scrollView:(MyScrollView *)scrollView viewAtIndex:(NSInteger)index
 {
+    FlashItem *item = [bannerArray objectAtIndex:index];
+    
     UIImageView *v = [[UIImageView alloc] init];
-    [v sd_setImageWithURL:[NSURL URLWithString:@"http://img.imgo.tv/preview/upload/3g/bighot/140818bbst.jpg"]];
+    [v sd_setImageWithURL:[NSURL URLWithString:item.Pic]];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 180 - 44 - 50, self.view.frame.size.width, 50)];
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    label.text = @"天天石头暖心回归 陆毅黄磊再做夫妻";
+    label.text = item.Name;
     [v addSubview:label];
     
     return v;

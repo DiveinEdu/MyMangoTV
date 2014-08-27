@@ -80,7 +80,7 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if (!decelerate) {
-        if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
+        if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidEndScroll:)]) {
             [_delegate scrollViewDidEndScroll:self];
         }
     }
@@ -88,7 +88,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidScroll:)]) {
+    if (_delegate && [_delegate respondsToSelector:@selector(scrollViewDidEndScroll:)]) {
         [_delegate scrollViewDidEndScroll:self];
     }
 }
