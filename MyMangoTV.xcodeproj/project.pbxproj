@@ -21,6 +21,9 @@
 		180D391F19A6E47900E83BF2 /* TVProgramIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391219A6E47900E83BF2 /* TVProgramIcon@2x.png */; };
 		180D392019A6E47900E83BF2 /* VipCornerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391319A6E47900E83BF2 /* VipCornerIcon@2x.png */; };
 		180D392119A6E47900E83BF2 /* VipIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 180D391419A6E47900E83BF2 /* VipIcon@2x.png */; };
+		184F923E19ADB7FF000DEF35 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 184F923B19ADB7FF000DEF35 /* UIScrollView+SVInfiniteScrolling.m */; };
+		184F923F19ADB7FF000DEF35 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 184F923D19ADB7FF000DEF35 /* UIScrollView+SVPullToRefresh.m */; };
+		184F924219ADBCE0000DEF35 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 184F924119ADBCE0000DEF35 /* NSString+URL.m */; };
 		185E774C19A2F14E00EE8AA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E774B19A2F14E00EE8AA8 /* main.m */; };
 		185E774F19A2F14E00EE8AA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E774E19A2F14E00EE8AA8 /* AppDelegate.m */; };
 		185E775119A2F14E00EE8AA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185E775019A2F14E00EE8AA8 /* Images.xcassets */; };
@@ -110,6 +113,13 @@
 		180D391219A6E47900E83BF2 /* TVProgramIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TVProgramIcon@2x.png"; sourceTree = "<group>"; };
 		180D391319A6E47900E83BF2 /* VipCornerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VipCornerIcon@2x.png"; sourceTree = "<group>"; };
 		180D391419A6E47900E83BF2 /* VipIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VipIcon@2x.png"; sourceTree = "<group>"; };
+		184F923919ADB7FF000DEF35 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		184F923A19ADB7FF000DEF35 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		184F923B19ADB7FF000DEF35 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		184F923C19ADB7FF000DEF35 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		184F923D19ADB7FF000DEF35 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		184F924019ADBCE0000DEF35 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
+		184F924119ADBCE0000DEF35 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		185E774619A2F14E00EE8AA8 /* MyMangoTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMangoTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185E774A19A2F14E00EE8AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185E774B19A2F14E00EE8AA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -235,6 +245,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184F923819ADB7FF000DEF35 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				184F923919ADB7FF000DEF35 /* SVPullToRefresh.h */,
+				184F923A19ADB7FF000DEF35 /* UIScrollView+SVInfiniteScrolling.h */,
+				184F923B19ADB7FF000DEF35 /* UIScrollView+SVInfiniteScrolling.m */,
+				184F923C19ADB7FF000DEF35 /* UIScrollView+SVPullToRefresh.h */,
+				184F923D19ADB7FF000DEF35 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		185E773D19A2F14E00EE8AA8 = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +435,8 @@
 				18845B6619AD7D8000FA422D /* Configuration.m */,
 				18845B6719AD7D8000FA422D /* NSDictionary+URL.h */,
 				18845B6819AD7D8000FA422D /* NSDictionary+URL.m */,
+				184F924019ADBCE0000DEF35 /* NSString+URL.h */,
+				184F924119ADBCE0000DEF35 /* NSString+URL.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -420,6 +444,7 @@
 		18BC8BED19A42A1B0096B203 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				184F923819ADB7FF000DEF35 /* SVPullToRefresh */,
 				18BC8BEE19A42A1B0096B203 /* SDWebImage */,
 			);
 			path = Library;
@@ -596,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				185E774F19A2F14E00EE8AA8 /* AppDelegate.m in Sources */,
+				184F923E19ADB7FF000DEF35 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				18BC8C1019A42A1B0096B203 /* MKAnnotationView+WebCache.m in Sources */,
 				180D390719A6E38400E83BF2 /* CategoryView.m in Sources */,
 				185E778E19A2F37800EE8AA8 /* ChannelViewController.m in Sources */,
@@ -606,6 +632,7 @@
 				18BC8C1719A42A1B0096B203 /* SDWebImageManager.m in Sources */,
 				18CD089919A5C5650058F3F7 /* DetailViewController.m in Sources */,
 				18845B6F19AD7D8000FA422D /* Configuration.m in Sources */,
+				184F924219ADBCE0000DEF35 /* NSString+URL.m in Sources */,
 				18845B6E19AD7D8000FA422D /* VideoItem.m in Sources */,
 				185E779119A2F37800EE8AA8 /* MyViewController.m in Sources */,
 				18DA10F119A425C10095D838 /* MyScrollView.m in Sources */,
@@ -632,6 +659,7 @@
 				18BC8C1219A42A1B0096B203 /* SDImageCache.m in Sources */,
 				18845B6A19AD7D8000FA422D /* DVIHTTPRequest.m in Sources */,
 				189D4EA619A499C5004EA0B7 /* CommonTableViewCell.m in Sources */,
+				184F923F19ADB7FF000DEF35 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				18BC8C1919A42A1B0096B203 /* UIButton+WebCache.m in Sources */,
 				18BC8C1119A42A1B0096B203 /* NSData+ImageContentType.m in Sources */,
 				185E779019A2F37800EE8AA8 /* LiveViewController.m in Sources */,

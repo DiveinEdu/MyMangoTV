@@ -11,6 +11,8 @@
 #import "CommonTableViewCell.h"
 #import "CategoryView.h"
 
+#import "DVIDataManager.h"
+
 @interface ChannelViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *_tableView;
@@ -47,6 +49,8 @@
     _categoryArray = @[@"综艺", @"新闻", @"电视剧", @"电影", @"音乐", @"动画片", @"出品方", @"爱芒果", @"VIP专区", @"花儿与少年"];
     
     [self createTableView];
+    
+    [[DVIDataManager sharedManager] liveVideoURL:@"贵州卫视"];
 }
 
 - (void)didReceiveMemoryWarning

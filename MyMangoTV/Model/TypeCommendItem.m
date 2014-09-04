@@ -43,4 +43,17 @@
 {
     return [[TypeCommendItem alloc] initWithDict:dict];
 }
+
+- (NSArray *)subItems
+{
+    if (self.PartDatas.count > 0) {
+        return self.PartDatas;
+    }
+    
+    if (self.VideoDatas.count > 0) {
+        return self.VideoDatas;
+    }
+    
+    return self.SpecialDatas;
+}
 @end

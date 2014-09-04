@@ -24,4 +24,6 @@
 - (instancetype)initWithDict:(NSDictionary *)dict;
 
 + (instancetype)typeCommendItem:(NSDictionary *)dict;
+
+- (NSArray *)subItems;
 @end

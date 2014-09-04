@@ -11,7 +11,7 @@
 #import "DVIHTTPRequest.h"
 #import "Configuration.h"
 
-typedef void(^DataHandlerType)(DVIHTTPRequest *, NSData *);
+typedef void(^DataHandlerType)(DVIHTTPRequest *request, NSData *data);
 
 @interface DVINetworkManager ()
 {
@@ -84,6 +84,17 @@ typedef void(^DataHandlerType)(DVIHTTPRequest *, NSData *);
                    [[NSNotificationCenter defaultCenter] postNotificationName:kGetTVLive object:nil userInfo:@{@"data":data}];
                    
                    [WeakArray removeObject:request];
+    }];
+}
+
+- (void)getLiveVideoURL:(NSDictionary *)dict
+{
+    __weak typeof(_requestArray) WeakArray = _requestArray;
+    [self startRequest:kGetLiveVideoURL method:@"GET" paramter:dict handler:^(DVIHTTPRequest *request, NSData *data) {
+        //下载完成后发送通知将数据传递出去
+        [[NSNotificationCenter defaultCenter] postNotificationName:kGetLiveVideo object:nil userInfo:@{@"data":data}];
+        
+        [WeakArray removeObject:request];
     }];
 }
 @end

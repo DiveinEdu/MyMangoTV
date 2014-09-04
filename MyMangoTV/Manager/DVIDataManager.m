@@ -15,10 +15,15 @@
 #import "VideoItem.h"
 #import "TypeCommendItem.h"
 
+#import "NSString+URL.h"
+
 @interface DVIDataManager ()
 {
     NSArray *_flashData;
     NSArray *_typeCommendData;
+    
+    NSString *_channelName;
+    NSArray *_liveVideoURL;
 }
 @end
 
@@ -45,14 +50,23 @@
     return self;
 }
 
-- (NSArray *)flashData
+- (NSArray *)flashData:(BOOL)refresh
 {
-    if (_flashData == nil) {
+    if (_flashData == nil || refresh) {
         [[DVINetworkManager sharedManager] getTodayCommend];
         
     }
     
     return _flashData;
+}
+
+- (NSArray *)commendData
+{
+    if (_typeCommendData == nil) {
+        [[DVINetworkManager sharedManager] getTodayCommend];
+    }
+    
+    return _typeCommendData;
 }
 
 - (void)didGetTodayCommend:(NSNotification *)notification
@@ -83,4 +97,27 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshData object:nil];
 }
 
+- (NSArray *)liveVideoURL:(NSString *)name
+{
+    if ([name isEqualToString:_channelName]) {
+        return _liveVideoURL;
+    }
+    
+    //到这里添加通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetLiveVideo:) name:kGetLiveVideo object:nil];
+    
+    NSString *encodedName = [name urlEncode];
+    NSDictionary *dict = @{@"ChannelName":encodedName};
+    [[DVINetworkManager sharedManager] getLiveVideoURL:dict];
+    return nil;
+}
+
+- (void)didGetLiveVideo:(NSNotification *)notification
+{
+    NSLog(@"%@", [[NSString alloc] initWithData:[notification.userInfo objectForKey:@"data"] encoding:NSUTF8StringEncoding]);
+    //处理数据....
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshLiveVideo object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:kGetLiveVideo];
+}
 @end

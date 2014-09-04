@@ -8,13 +8,14 @@
 
 #import "HomeViewController.h"
 
+#import "CommonTableViewCell.h"
+
 #import "MyScrollView.h"
 #import "MyTipsView.h"
+#import "HotView.h"
 
 #import "UIImageView+WebCache.h"
-
-#import "CommonTableViewCell.h"
-#import "HotView.h"
+#import "SVPullToRefresh.h"
 
 #import "PublicHeader.h"
 #import "Configuration.h"
@@ -34,6 +35,7 @@
     MyTipsView *tipsView;
     
     NSArray *bannerArray;
+    NSArray *commendArray;
 }
 @end
 
@@ -90,6 +92,11 @@
     homeTableView.dataSource = self;
     homeTableView.delegate = self;
     [self.view addSubview:homeTableView];
+    
+    [homeTableView addPullToRefreshWithActionHandler:^{
+        //强制刷新首页的数据
+        [[DVIDataManager sharedManager] flashData:YES];
+    }];
 }
 
 - (void)viewDidLoad
@@ -111,15 +118,19 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRefresh:) name:kRefreshData object:nil];
     
     //获取首页的数据
-    [[DVIDataManager sharedManager] flashData];
+    [homeTableView triggerPullToRefresh];
 }
 
 //刷新首页上面的滚动视图
 - (void)didRefresh:(NSNotification *)notification
 {
-    bannerArray = [[DVIDataManager sharedManager] flashData];
-    
+    bannerArray = [[DVIDataManager sharedManager] flashData: NO];
     [bannerView reloadData];
+    
+    commendArray = [[DVIDataManager sharedManager] commendData];
+    [homeTableView reloadData];
+    
+    [homeTableView.pullToRefreshView stopAnimating];
 }
 
 - (void)didClickHistory:(id)sender
@@ -137,7 +148,7 @@
 //1
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return commendArray.count;
 }
 
 //2
@@ -157,8 +168,14 @@
         cell = [[CommonTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:hotIdentifier];
     }
     
+    //获取每个section的数据
+    TypeCommendItem *item = [commendArray objectAtIndex:indexPath.section];
+    //获取section中subItem的数据
+    NSArray *array = [item subItems];
+    
+    //返回每个cell里面图片的个数
     cell.numberOfViewInCell = ^NSInteger(CommonTableViewCell *cCell){
-        return 9;
+        return array.count;
     };
     
     cell.widthForCell = ^CGFloat(CommonTableViewCell *cCell, NSInteger index){
@@ -168,8 +185,11 @@
     cell.viewForCell = ^(CommonTableViewCell *cCell, NSInteger index){
         HotView *v = [[HotView alloc] init];
         
-        v.imageView.image = [UIImage imageNamed:@"color-wheel-icon.jpg"];
-        v.label.text = @"这是一个文字";
+        if (item.UiPartType == 3) {
+            VideoItem *video = [array objectAtIndex:index];
+            [v.imageView sd_setImageWithURL:[NSURL URLWithString:video.Pic]];
+            v.label.text = video.Vname;
+        }
         
         return v;
     };
@@ -200,6 +220,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {//添加section header
+    TypeCommendItem *item = [commendArray objectAtIndex:section];
+    
     UIControl *control = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
     [control addTarget:self action:@selector(didClickSection:) forControlEvents:UIControlEventTouchUpInside];
     control.backgroundColor = [UIColor whiteColor];
@@ -212,7 +234,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16, 0, self.view.frame.size.width - 20, 50)];
     label.font = [UIFont systemFontOfSize:32];
     label.textColor = [UIColor colorWithRed:100.0/255 green:100.0/255 blue:100.0/255 alpha:1.0];
-    label.text = @"独家热播";
+    label.text = item.TypeName;
     [control addSubview:label];
     
     if (section % 2) {

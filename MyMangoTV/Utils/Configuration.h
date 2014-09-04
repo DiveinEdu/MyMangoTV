@@ -10,8 +10,11 @@
 
 extern NSString * const kGetTodayCommend;
 extern NSString * const kGetTVLive;
+extern NSString * const kGetLiveVideo;
 
 extern NSString * const kRefreshData;
+extern NSString * const kRefreshLiveVideo;
 
 extern NSString * const kGetTodayCommendURL;
 extern NSString * const kGetLiveURL;
+extern NSString * const kGetLiveVideoURL;

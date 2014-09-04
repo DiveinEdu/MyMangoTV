@@ -17,4 +17,7 @@
 
 //获取直播信息
 - (void)getGetLive:(NSDictionary *)dict;
+
+//获取某个频道的视频列表
+- (void)getLiveVideoURL:(NSDictionary *)dict;
 @end

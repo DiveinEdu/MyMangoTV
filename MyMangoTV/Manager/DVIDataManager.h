@@ -12,5 +12,8 @@
 
 + (instancetype)sharedManager;
 
-- (NSArray *)flashData;
+- (NSArray *)flashData:(BOOL)refresh;
+- (NSArray *)commendData;
+
+- (NSArray *)liveVideoURL:(NSString *)name;
 @end
